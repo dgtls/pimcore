@@ -18,8 +18,8 @@ addons:
     debug: true
     paths:
       - $(ls var/logs/*.log | tr "\n" ":")
-      - ./app/config/cmf.yml
-      - ./var/logs
+      - app/config/cmf.yml
+      - var/logs
   hosts:
     - pimcore-test.dev
 
