@@ -18,7 +18,7 @@ addons:
     debug: true
     paths:
       - $(ls /var/logs/*.log | tr "\n" ":")
-      - $HOME/app/config/config.yml.log
+      - $HOME/app/config/config.yml
   hosts:
     - pimcore-test.dev
 
