@@ -18,7 +18,7 @@ addons:
     debug: true
     paths:
       - $(ls /var/logs/*.log | tr "\n" ":")
-      - $HOME/app/config/config.yml
+      - app/config/config.yml
   hosts:
     - pimcore-test.dev
 
@@ -148,6 +148,7 @@ env:
 
 # see https://docs.travis-ci.com/user/job-lifecycle/
 before_install:
+  - pwd
   - mysql --version
   - mysql -e "CREATE DATABASE pimcore_test CHARSET=utf8mb4;"
 
