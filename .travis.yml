@@ -26,105 +26,126 @@ addons:
 matrix:
   include:
     # Symfony 3.4 all tests
-    - name: "All Tests - PHP 7.2 Symfony 3.4"
+#    - name: "All Tests - PHP 7.2 Symfony 3.4"
+#      os: linux
+#      sudo: required
+#      php: 7.2
+#      env:
+#        - SYMFONY_VERSION="^3.4"
+#
+#    - name: "All Tests - PHP 7.3 Symfony 3.4"
+#      os: linux
+#      sudo: required
+#      php: 7.3
+#      env:
+#        - SYMFONY_VERSION="^3.4"
+#
+#    # Symfony 4.* all tests
+#    - name: "All Tests - PHP 7.2 Symfony 4"
+#      os: linux
+#      sudo: required
+#      php: 7.2
+#
+#
+#    - name: "All Tests - PHP 7.3 Symfony 4"
+#      os: linux
+#      sudo: required
+#      php: 7.3
+
+    - name: "All Tests - PHP 7.4 Symfony 4"
       os: linux
       sudo: required
-      php: 7.2
-      env:
-        - SYMFONY_VERSION="^3.4"
+      php: "7.4"
 
-    - name: "All Tests - PHP 7.3 Symfony 3.4"
-      os: linux
-      sudo: required
-      php: 7.3
-      env:
-        - SYMFONY_VERSION="^3.4"
-
-    # Symfony 4.* all tests
-    - name: "All Tests - PHP 7.2 Symfony 4"
-      os: linux
-      sudo: required
-      php: 7.2
-
-
-    - name: "All Tests - PHP 7.3 Symfony 4"
-      os: linux
-      sudo: required
-      php: 7.3
 
     - name: "All Tests - PHP 7.4 Symfony 4"
       os: linux
       sudo: required
       php: "7.4snapshot"
 
-    # Other Tests
-    - name: "REST Tests - PHP 7.2 Symfony 3.4"
-      os: linux
-      sudo: required
-      php: 7.2
-      env:
-        - SYMFONY_VERSION="^3.4"
-        - PIMCORE_TEST_SUITE=rest
-        - PIMCORE_TEST_ENV=http
+#    # Other Tests
+#    - name: "REST Tests - PHP 7.2 Symfony 3.4"
+#      os: linux
+#      sudo: required
+#      php: 7.2
+#      env:
+#        - SYMFONY_VERSION="^3.4"
+#        - PIMCORE_TEST_SUITE=rest
+#        - PIMCORE_TEST_ENV=http
+#
+#    - name: "REST Tests - PHP 7.3 Symfony 3.4"
+#      os: linux
+#      sudo: required
+#      php: 7.3
+#      env:
+#        - SYMFONY_VERSION="^3.4"
+#        - PIMCORE_TEST_SUITE=rest
+#        - PIMCORE_TEST_ENV=http
+#
+#    - name: "Redis Cache Tests - PHP 7.2 Symfony 4"
+#      os: linux
+#      php: 7.2
+#      env:
+#        - PIMCORE_TEST_SUITE=cache
+#        - PIMCORE_TEST_GROUP=cache.core.redis
+#        - PIMCORE_TEST_SETUP_SKIP_PHP_REDIS_EXTENSION=true
+#
+#    # Test Stan - see https://github.com/phpstan/phpstan
+#    - name: "PHPStan Tests - PHP 7.2 Symfony 3.4"
+#      os: linux
+#      php: 7.2
+#      env:
+#        - SYMFONY_VERSION="^3.4"
+#        - TASK_TESTS=0
+#        - TASK_STAN=1
+#    - name: "PHPStan Tests - PHP 7.3 Symfony 3.4"
+#      os: linux
+#      php: 7.3
+#      env:
+#        - SYMFONY_VERSION="^3.4"
+#        - TASK_TESTS=0
+#        - TASK_STAN=1
+#
+#    # Test Stan Symfony ^4.0
+#    - name: "PHPStan Tests - PHP 7.2 Symfony 4"
+#      os: linux
+#      php: 7.2
+#      env:
+#        - TASK_TESTS=0
+#        - TASK_STAN=1
+#
+#    - name: "PHPStan Tests - PHP 7.3 Symfony 4"
+#      os: linux
+#      php: 7.3
+#      env:
+#        - TASK_TESTS=0
+#        - TASK_STAN=1
 
-    - name: "REST Tests - PHP 7.3 Symfony 3.4"
-      os: linux
-      sudo: required
-      php: 7.3
-      env:
-        - SYMFONY_VERSION="^3.4"
-        - PIMCORE_TEST_SUITE=rest
-        - PIMCORE_TEST_ENV=http
 
-    - name: "Redis Cache Tests - PHP 7.2 Symfony 4"
+    - name: "PHPStan Tests - PHP 7.3 Symfony 4"
       os: linux
-      php: 7.2
-      env:
-        - PIMCORE_TEST_SUITE=cache
-        - PIMCORE_TEST_GROUP=cache.core.redis
-        - PIMCORE_TEST_SETUP_SKIP_PHP_REDIS_EXTENSION=true
-
-    # Test Stan - see https://github.com/phpstan/phpstan
-    - name: "PHPStan Tests - PHP 7.2 Symfony 3.4"
-      os: linux
-      php: 7.2
-      env:
-        - SYMFONY_VERSION="^3.4"
-        - TASK_TESTS=0
-        - TASK_STAN=1
-    - name: "PHPStan Tests - PHP 7.3 Symfony 3.4"
-      os: linux
-      php: 7.3
-      env:
-        - SYMFONY_VERSION="^3.4"
-        - TASK_TESTS=0
-        - TASK_STAN=1
-
-    # Test Stan Symfony ^4.0
-    - name: "PHPStan Tests - PHP 7.2 Symfony 4"
-      os: linux
-      php: 7.2
+      php: 7.4
       env:
         - TASK_TESTS=0
         - TASK_STAN=1
 
     - name: "PHPStan Tests - PHP 7.3 Symfony 4"
       os: linux
-      php: 7.3
+      php: "7.4snapshot"
       env:
         - TASK_TESTS=0
         - TASK_STAN=1
 
-    # Test Docs
-    - name: "Documentation"
-      os: linux
-      php: 7.2
-      env:
-        - TASK_TESTS=0
-        - TASK_DOCS=1
-      cache:
-        directories:
-          - tmp-docs/pimcore-docs/vendor
+#    # Test Docs
+#    - name: "Documentation"
+#      os: linux
+#      php: 7.2
+#      env:
+#        - TASK_TESTS=0
+#        - TASK_DOCS=1
+#      cache:
+#        directories:
+#          - tmp-docs/pimcore-docs/vendor
   fast_finish: true
 
 cache:
