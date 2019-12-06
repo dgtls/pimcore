@@ -29,5 +29,10 @@ fi
 # generate json result file
 CMD="$CMD --json"
 
+# add coverage if configured
+if [ $REMOVE_XDEBUG == 0 ]; then
+    CMD="$CMD --coverage"
+fi
+
 echo $CMD
 eval $CMD

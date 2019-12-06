@@ -32,6 +32,7 @@ matrix:
       php: 7.2
       env:
         - SYMFONY_VERSION="^3.4"
+        - REMOVE_XDEBUG=0
 
     - name: "All Tests - PHP 7.3 Symfony 3.4"
       os: linux
@@ -145,6 +146,7 @@ env:
     - SYMFONY_VERSION=^4.0
     - PIMCORE_PROJECT_ROOT=$TRAVIS_BUILD_DIR
     - PIMCORE_PHP_ERROR_REPORTING=32767 # E_ALL
+    - REMOVE_XDEBUG=1
 
 # see https://docs.travis-ci.com/user/job-lifecycle/
 before_install:
@@ -160,7 +162,7 @@ install:
 # see https://docs.travis-ci.com/user/job-lifecycle/
 before_script:
   - yes | pecl install imagick
-  - phpenv config-rm xdebug.ini || true
+  - if [ $REMOVE_XDEBUG == 1 ]; then phpenv config-rm xdebug.ini || true; fi
   - if [ $TASK_TESTS == 1 ]; then .travis/setup-php.sh; fi
   - if [ $TASK_TESTS == 1 ]; then .travis/setup-functional-tests.sh; fi
   - if [ $TASK_STAN == 1 ]; then .travis/setup-php.sh; fi
